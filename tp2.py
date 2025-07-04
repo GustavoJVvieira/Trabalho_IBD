@@ -24,7 +24,7 @@ if uploaded_files:
     # Carrega os dataframes
     for f in uploaded_files:
         try:
-            df = pd.read_csv(f, sep=';', encoding='latin1', on_bad_lines='skip', engine='python')
+            df = pd.read_csv(f, sep=';', encoding='utf-8-sig', on_bad_lines='skip', engine='python')
             tabela_nome = f.name.split(".")[0].replace(" ", "_").upper()  # Nome da tabela padronizado
             dfs[tabela_nome] = df
         except Exception as e:
